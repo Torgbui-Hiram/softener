@@ -1,0 +1,17 @@
+{% extends 'product/base.html' %}
+{% load static %}
+{% block content %}
+<br><br><br>
+<h1>Update item</h1>
+<center>
+    {% if submitted %}
+    Your product was submitted succesfully...
+    {% else %}
+    <form action="" method=POST>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-secondary" value="Submit">
+    </form>
+    {% endif %}
+</center>
+{% endblock %}

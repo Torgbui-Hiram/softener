@@ -1,0 +1,22 @@
+{% extends 'product/base.html' %}
+{% block content %}
+<center>
+    <h1>CRYSTAL ESSENTIAL FABRIC SOFTENER</h1>
+    <div class="row">
+        {% for items in product %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ items.image_url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ items.name }}</h5>
+                    <p class="card-text">
+                        {{ items.description }}</p>
+                    <a href="" id="records" class="btn btn-primary">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+</center>
+{% endblock %}

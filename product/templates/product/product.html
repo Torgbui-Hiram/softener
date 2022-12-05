@@ -1,0 +1,27 @@
+{% extends 'product/base.html' %}
+{% block content %}
+<h1>ALL PRODUCTS</h1>
+<br><br>
+
+<table class="table table-hover table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">id </th>
+            <th scope="col">names </th>
+            <th scope="col">prices </th>
+            <th scope="col"> </th>
+        </tr>
+    </thead>
+    {% for items in view %}
+    <tbody>
+        <th>{{ items.id }}</th>
+        <th><a href="{% url 'select-item' items.id %}">{{ items.name }} </a> </th>
+        <th><a href="{% url 'select-item' items.id %}">{{ items.price }}</a> </th>
+        <td align="right">
+            <a href="{% url 'add-item' %}" class="btn btn-secondary">+ADD</a>
+        </td>
+    </tbody>
+    {% endfor %}
+</table>
+<br>
+{% endblock %}

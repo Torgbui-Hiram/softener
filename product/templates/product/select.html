@@ -1,0 +1,18 @@
+{% extends 'product/base.html' %}
+{% block content %}
+<h1>SELLECTED PRODUCT </h1>
+<div class="card text-left">
+    <div class="card-header">
+        <h1>{{ selected.name }}</h1>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ selected.name }} </h5>
+        <p class="card-text"><strong> Price:</strong> ${{ selected.price }} </p>
+        <p class="card-text"><strong>Stock:</strong> {{ selected.stock }}</p>
+        <p class="card-text"><strong>Details:</strong> {{ selected.description }}</p>
+    </div>
+    <div class="card-footer text-muted">
+        We care for you
+    </div>
+</div>
+{% endblock %}
