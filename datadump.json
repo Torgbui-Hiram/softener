@@ -1,0 +1,9 @@
+Performing system checks...
+
+
+You have 24 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, product, sessions.
+Run 'python manage.py migrate' to apply them.
+December 06, 2022 - 23:13:36
+Django version 4.1, using settings 'crystal_shop.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
