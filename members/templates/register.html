@@ -1,0 +1,16 @@
+{% extends 'product/base.html' %}
+{% load static %}
+{% block content %}
+<br><br>
+<center>
+    <h1>Create User Account Here!</h1>
+    <form action="" method="POST" class="shadow p-3 mb-5 bg-body rounded">
+        {% csrf_token %}
+        <input type="text" class="form-control" name="username" placeholder="Enter your username here"><br>
+        <input type="email" class="form-control" name="email" placeholder="Enter email here!"><br>
+        <input type="password" class="form-control" name="password1" placeholder="Enter password"><br>
+        <input type="password" class="form-control" name="password2" placeholder="confirm password"><br>
+        <input type="submit" class="btn btn-secondary" value="Submit"><br>
+    </form>
+</center>
+{% endblock %}

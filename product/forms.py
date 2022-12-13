@@ -40,13 +40,13 @@ class TradersForm(ModelForm):
             'signup_date': "",
         }
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Select'}),
+            'name': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select'}),
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Name'}),
             'address': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter address'}),
             'mobile_phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter phone number'}),
             'country': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter country'}),
             'proof_id': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Identity type'}),
             'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your email'}),
-            'profile_picture': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Paste your image link here'}),
+            'profile_picture': forms.FileInput(attrs={'class': 'form-control', 'placeholder': 'select picture'}),
             'signup_date': forms.DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'Enter date and time'}),
         }

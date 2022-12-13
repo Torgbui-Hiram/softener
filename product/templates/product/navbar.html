@@ -7,18 +7,42 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
+
+      {% if user.is_authenticated %}
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'home' %}"><i class="fa-solid fa-house"></i></i> <span
+            class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'product-view' %}">product <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'product-view' %}"><i class="fa-solid fa-cart-plus"></i> product <span
+            class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'list-traders' %}">TRADERS <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'new_pro' %}"><i class="fa-solid fa-plus"></i> PRODUCT <span
+            class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'add-traders' %}">REGISTER TRADER<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'list-traders' %}"><i class="fa-solid fa-users"></i> TRADERS <span
+            class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'user_logout' %}"> Logout<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#"> {{user.username}}<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'add-traders' %}"><i class="fa-solid fa-user-plus"></i> REGISTER<span
+            class="sr-only">(current)</span></a>
+      </li>
+      {% else %}
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'user_login' %}"> Login<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'signup' %}"> Signup<span class="sr-only">(current)</span></a>
+      </li>
+      {% endif%}
     </ul>
   </div>
 </nav>

@@ -1,0 +1,36 @@
+{% extends 'product/base.html' %}
+{% load static %}
+{% block content %}
+<br><br>
+<div class="headof">
+    <h1>Add new product to list</h1>
+</div>
+<div class="shadow p-3 mb-5 bg-body rounded">
+    {% if submitted %}
+    <h4>Your product was added succesfully</h4>
+    <br><br><br>
+    {% else %}
+    <!-- heading box -->
+
+    <!-- adding new product form -->
+    <div class="newproduct">
+
+        <center>
+            <h2>Add Product Here</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h5><i class="fa-light fa-rectangle-history-circle-plus"></i></h5>
+                <input type="text" name="name" class="form-control" placeholder="Enter product name "><br>
+                <input type="text" name="description" class="form-control" placeholder="Product details "><br>
+                <input type="text" name="image_url" class="form-control" placeholder="Enter image link to product "><br>
+                <input type="text" name="price" class="form-control" placeholder="Enter product price "><br>
+                <input type="text" name="stock" class="form-control" placeholder="Enter total stock "><br>
+                <hr>
+                <a href=""><i class="fa-solid fa-circle-plus"></i><input type="submit" class="btn btn-secondary"
+                        value="ADD" placeholder="Enter total stock "></a>
+        </center>
+        </form>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

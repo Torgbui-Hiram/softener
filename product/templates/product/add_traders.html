@@ -3,9 +3,9 @@
 <center>
     <h1>REGISTER TRADERS</h1>
     {% if submitted %}
-    Trader is account is successfullycreated!!!
+    Trader account is created succesfully!!!
     {% else %}
-    <form action="" method=POST>
+    <form action="" method=POST class="shadow p-3 mb-5 bg-body rounded">
         {% csrf_token %}
         {{form.as_p}}
         <input type="submit" class="btn btn-secondary" value="Submit">

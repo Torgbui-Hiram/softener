@@ -7,7 +7,7 @@
     {% if submitted %}
     Your product was submitted succesfully...
     {% else %}
-    <form action="" method=POST>
+    <form action="" method=POST class="shadow p-3 mb-5 bg-body rounded">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" class="btn btn-secondary" value="Submit">

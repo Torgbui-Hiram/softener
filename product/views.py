@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import FabricSoftener, Traders
 from .forms import SoftenerForm, TradersForm
 from django.http import HttpResponseRedirect
@@ -62,3 +62,32 @@ def add_traders(request):
             submitted = True
     return render(request, 'product/add_traders.html', {'form': form,
                                                         'submitted': submitted, })
+
+
+# add new product from site to database
+def add_product(request):
+    submitted = False
+    if request.method == 'POST':
+        form = SoftenerForm(request.POST)
+        if form.is_valid:
+            form.save()
+        return HttpResponseRedirect('/new_product?submitted=True')
+    else:
+        if 'submitted' in request.GET:
+            submitted = True
+        form = SoftenerForm()
+        return render(request, 'product/new_product.html', {'form': form, 'submitted': submitted})
+
+
+# edit and update trader profile
+def edit_trader_profile(request, trader_id):
+    model = Traders.objects.get(pk=trader_id)
+    if request.method == 'POST':
+        form = TradersForm(request.POST or None, instance=model)
+        if form.is_valid:
+            form.save()
+            return redirect('list-traders')
+    else:
+        form = TradersForm(instance=model)
+    return render(request, 'product/edit_trader.html', {'form': form, 'model': model})
+

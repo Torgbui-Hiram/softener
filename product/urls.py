@@ -9,4 +9,6 @@ urlpatterns = [
     path('add_item/', views.add_item, name='add-item'),
     path('list_traders/', views.list_traders, name='list-traders'),
     path('add_traders/', views.add_traders, name='add-traders'),
+    path('new_product/', views.add_product, name='new_pro'),
+    path('edit_trader/<trader_id>', views.edit_trader_profile, name='edit_trader'),
 ]

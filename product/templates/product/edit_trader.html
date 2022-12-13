@@ -1,0 +1,16 @@
+{% extends 'product/base.html' %}
+{% load static %}
+{% block content %}
+<center>
+    <br>
+    <h1>Update Trader Records</h1>
+    <form action="" method="POST" class="shadow p-3 mb-5 bg-body rounded">
+        {% csrf_token %}
+        {{form.as_p }}
+        <br>
+        <hr>
+        <input type="submit" value="Submit" class="btn btn-secondary">
+</center>
+</form>
+<br><br>
+{% endblock %}

@@ -1,28 +1,30 @@
 {% extends 'product/base.html' %}
 {% load static %}
 {% block content %}
-<h1>TRADERS LIST</h1>
 <center>
+    <h1>TRADERS LIST</h1>
     {% for items in trader_list %}
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="{{items.profile_picture}}" class="card-img" alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">{{items.title}}</h5>
-                    <p class="card-text">{{items.address}}</p>
-                    <p class="card-text">{{items.mobile_phone}}</p>
-                    <p class="card-text">{{items.country}}</p>
-                    <p class="card-text">{{items.proof_id}}</p>
-                    <p class="card-text">{{items.email}}</p>
-                    <p class="card-text">{{items.signup_date}}</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <a href="{% url 'edit_trader' items.id %}">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="{{items.profile_picture}}" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{items.title}}</h5>
+                        <p class="card-text">{{items.address}}</p>
+                        <p class="card-text">{{items.mobile_phone}}</p>
+                        <p class="card-text">{{items.country}}</p>
+                        <p class="card-text">{{items.proof_id}}</p>
+                        <p class="card-text">{{items.email}}</p>
+                        <p class="card-text">{{items.signup_date}}</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </a>
     <br>
 
     {% endfor%}

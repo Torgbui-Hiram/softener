@@ -16,15 +16,17 @@ class FabricSoftener(models.Model):
 
 class Traders(models.Model):
     name = models.ForeignKey(settings.AUTH_USER_MODEL,
-                             on_delete=models.CASCADE)
+                             on_delete=models.CASCADE, default='admin')
     title = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     mobile_phone = models.CharField(max_length=25)
     country = models.CharField(max_length=50)
     proof_id = models.CharField(max_length=35)
     email = models.CharField(max_length=40)
-    profile_picture = models.CharField(max_length=2083, null=True, blank=True)
+    profile_picture = models.ImageField(
+        editable=True, blank=True, null=True)
     signup_date = models.DateTimeField(default=timezone.now)
 
-    def __str__(self):
-        return self.title
+
+def __str__(self):
+    return self.title
