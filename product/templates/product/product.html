@@ -19,6 +19,7 @@
         <th><a href="{% url 'select-item' items.id %}">{{ items.price }}</a> </th>
         <td align="right">
             <a href="{% url 'add-item' %}" class="btn btn-secondary">+ADD</a>
+            <a href="#" class="btn btn-danger">DELETE</a>
         </td>
     </tbody>
     {% endfor %}

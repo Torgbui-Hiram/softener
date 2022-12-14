@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.core.mail import send_mail
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
+from product.models import Traders, FabricSoftener
 
 
 from django.http import HttpResponse
@@ -86,3 +87,6 @@ def activate(request, uidb64, token):
         return redirect('user_login')
     else:
         return HttpResponse('Activation link is invalid!')
+
+
+

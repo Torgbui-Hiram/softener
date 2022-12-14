@@ -91,3 +91,12 @@ def edit_trader_profile(request, trader_id):
         form = TradersForm(instance=model)
     return render(request, 'product/edit_trader.html', {'form': form, 'model': model})
 
+
+# delete item
+def remove_product(request, product_id):
+    product = FabricSoftener.objects.get(pk=product_id)
+    print(product)
+    # product.delete()
+    return redirect('list-traders')
+
+
