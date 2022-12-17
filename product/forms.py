@@ -6,13 +6,15 @@ from . models import FabricSoftener, Traders
 class SoftenerForm(ModelForm):
     class Meta:
         model = FabricSoftener
-        fields = ('name', 'description', 'image_url', 'price', 'stock')
+        fields = ('name', 'description', 'image_url',
+                  'price', 'stock', 'product_image')
         labels = {
             'name': "",
             'description': "",
             'image_url': "",
             'price': "",
             'stock': "",
+            'product_image': "",
         }
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Product Name'}),

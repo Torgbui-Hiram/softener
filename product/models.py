@@ -6,9 +6,11 @@ from django.utils import timezone
 class FabricSoftener(models.Model):
     name = models.CharField(max_length=40)
     description = models.TextField()
-    image_url = models.CharField(max_length=2083)
+    image_url = models.CharField(max_length=2083, blank=True, null=True)
     price = models.FloatField(max_length=2083)
     stock = models.IntegerField()
+    product_image = models.ImageField(
+        editable=True, blank=True, null=True, upload_to='images/')
 
     def __str__(self):
         return self.name
@@ -24,7 +26,7 @@ class Traders(models.Model):
     proof_id = models.CharField(max_length=35)
     email = models.CharField(max_length=40)
     profile_picture = models.ImageField(
-        editable=True, blank=True, null=True)
+        editable=True, blank=True, null=True, upload_to='profile/')
     signup_date = models.DateTimeField(default=timezone.now)
 
 

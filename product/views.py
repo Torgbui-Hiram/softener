@@ -68,7 +68,7 @@ def add_traders(request):
 def add_product(request):
     submitted = False
     if request.method == 'POST':
-        form = SoftenerForm(request.POST)
+        form = SoftenerForm(request.POST, request.FILES)
         if form.is_valid:
             form.save()
         return HttpResponseRedirect('/new_product?submitted=True')
@@ -98,5 +98,3 @@ def remove_product(request, product_id):
     print(product)
     # product.delete()
     return redirect('list-traders')
-
-

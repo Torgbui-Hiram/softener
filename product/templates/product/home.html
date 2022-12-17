@@ -9,7 +9,9 @@
         {% for items in product %}
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="{{ items.image_url }}" class="card-img-top" alt="...">
+                {% if items.product_image %}
+                <img src="{{items.product_image.url}}" alt="">
+                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ items.name }}</h5>
                     <p class="card-text">
