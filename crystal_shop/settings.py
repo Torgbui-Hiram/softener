@@ -2,7 +2,6 @@ import dj_database_url
 from pathlib import Path
 import os
 from decouple import config
-from django.conf import settings
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -42,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'product.apps.ProductConfig',
     'members.apps.MembersConfig',
+    'message.apps.MessageConfig',
 ]
 
 MIDDLEWARE = [

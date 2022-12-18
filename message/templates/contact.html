@@ -1,0 +1,23 @@
+{% extends 'product/base.html' %}
+{% block content %}
+<br><br>
+<div class="box">
+    <form action="" method=POST>
+        {% csrf_token %}
+        <div class="shadow p-3 mb-5 bg-body rounded">
+            <center>
+                <br><br>
+                <h1>Send Crystal Message</h1>
+                <input type="text" name="subj" placeholder="Mail Subject" class="form-control"><br>
+                <input type="text" name="name" class="form-control" placeholder="Name of sender"><br>
+                <input type="text" name="sender_mail" class="form-control" placeholder="Enter sender emil here!"><br>
+                <textarea name="message" id="" cols="15" rows="5" class="form-control"
+                    placeholder="Type your message here"></textarea>
+                <br>
+                <hr>
+                <input type="submit" value="submit" class="btn btn-secondary">
+            </center>
+        </div>
+    </form>
+</div>
+{% endblock %}
