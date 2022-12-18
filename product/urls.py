@@ -11,4 +11,5 @@ urlpatterns = [
     path('add_traders/', views.add_traders, name='add-traders'),
     path('new_product/', views.add_product, name='new_pro'),
     path('edit_trader/<trader_id>', views.edit_trader_profile, name='edit_trader'),
+    path('rm_p/<pro_id>', views.remove_product, name='remove'),
 ]

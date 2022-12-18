@@ -8,6 +8,7 @@
         <tr>
             <th scope="col">id </th>
             <th scope="col">names </th>
+            <th scope="col">Volume(LT) </th>
             <th scope="col">prices </th>
             <th scope="col">ACTIONS </th>
         </tr>
@@ -17,9 +18,10 @@
         <th>{{ items.id }}</th>
         <th><a href="{% url 'select-item' items.id %}">{{ items.name }} </a> </th>
         <th><a href="{% url 'select-item' items.id %}">{{ items.price }}</a> </th>
+        <th>{{ items.price }}</th>
         <td align="right">
             <a href="{% url 'add-item' %}" class="btn btn-secondary">+ADD</a>
-            <a href="#" class="btn btn-danger">DELETE</a>
+            <a href="{% url 'remove' items.id %}" class="btn btn-danger">DELETE</a>
         </td>
     </tbody>
     {% endfor %}

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import FabricSoftener, Traders
 from .forms import SoftenerForm, TradersForm
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 
 
 def home(request):
@@ -93,8 +94,9 @@ def edit_trader_profile(request, trader_id):
 
 
 # delete item
-def remove_product(request, product_id):
-    product = FabricSoftener.objects.get(pk=product_id)
-    print(product)
-    # product.delete()
-    return redirect('list-traders')
+def remove_product(request, pro_id):
+    deleted = False
+    product = FabricSoftener.objects.get(pk=pro_id)
+    product.delete()
+    messages.success(request, 'Product removed from list successfully')
+    return redirect('home')
