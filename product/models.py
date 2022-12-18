@@ -9,6 +9,7 @@ class FabricSoftener(models.Model):
     image_url = models.CharField(max_length=2083, blank=True, null=True)
     price = models.FloatField(max_length=2083)
     stock = models.IntegerField()
+    product_volume = models.CharField(max_length=10, default='500ML')
     product_image = models.ImageField(
         editable=True, blank=True, null=True, upload_to='images/')
 

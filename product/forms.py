@@ -7,7 +7,7 @@ class SoftenerForm(ModelForm):
     class Meta:
         model = FabricSoftener
         fields = ('name', 'description', 'image_url',
-                  'price', 'stock', 'product_image')
+                  'price', 'product_volume', 'stock', 'product_image')
         labels = {
             'name': "",
             'description': "",
